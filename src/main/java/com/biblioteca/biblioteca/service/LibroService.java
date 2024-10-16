@@ -8,7 +8,7 @@ import java.util.List;
 
 
 
-@Service
+@Service//
 public class LibroService {
 
     // Este campo privado almacena una referencia al repositorio de libros. El repositorio maneja las interacciones con la base

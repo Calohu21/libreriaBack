@@ -12,14 +12,15 @@ public class Prestamo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_prestamo;
+    private int id_prestamo;
 
     @ManyToOne
-    @JoinColumn(name = "isbn", referencedColumnName = "isbn")  // La columna isbn será generada en la tabla de préstamos automáticamente debido a la relación @ManyToOne entre Prestamo y Libro
+    @JoinColumn(name = "isbn", referencedColumnName = "isbn", nullable = false)  // La columna isbn será generada en la tabla de préstamos automáticamente debido a la relación @ManyToOne entre Prestamo y Libro
     private Libro libro; // Relación con la entidad Libro
 
-    @Column(nullable = false)
-    private String usuarioId; // Id del usuario (relacionado con la entidad de usuarios)
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario", nullable = false)
+    private Usuario usuario; // Id del usuario (relacionado con la entidad de usuarios)/
 
     @Column(nullable=false)
     private LocalDate fechaPrestamo;
@@ -27,11 +28,15 @@ public class Prestamo {
     @Column(nullable=false)
     private LocalDate fechaDevolucion;
 
+    public enum EstadoPrestamo{
+        PRESTADO,
+        DEVUELTO,
+        PENDIENTE
+    }
 
-    public enum estado{
-        prestado,
-        devuelto,
-        pendiente
-    };
+    // Utilizar el Enum EstadoPrestamo en lugar de String para la columna estado
+    @Enumerated(EnumType.STRING)  // Esto guarda el valor como una cadena en la base de datos
+    @Column(nullable = false)
+    private EstadoPrestamo estado;
 
 }

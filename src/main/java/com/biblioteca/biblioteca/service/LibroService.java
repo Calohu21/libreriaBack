@@ -12,7 +12,7 @@ import java.util.List;
 public class LibroService {
 
     // Este campo privado almacena una referencia al repositorio de libros. El repositorio maneja las interacciones con la base
-    // de datos, y el servicio utiliza este repositorio para llevar a cabo las operaciones CRU
+    // de datos, y el servicio utiliza este repositorio para llevar a cabo las operaciones CRU/
     private final LibroRepository libroRepository;
 
     // Constructor para inyección de dependencias

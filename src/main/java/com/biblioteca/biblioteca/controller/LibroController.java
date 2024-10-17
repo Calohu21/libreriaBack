@@ -40,7 +40,7 @@ import java.util.List;
             return libroService.addLibro(libro);
         }
 
-        // Actualizar un libro existente
+        // Actualizar un libro existente/
         @PutMapping("/{isbn}")
         public Libro updateLibro(@PathVariable String isbn, @RequestBody Libro libro) {
             return libroService.updateLibro(isbn, libro);

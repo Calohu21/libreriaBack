@@ -16,7 +16,7 @@ import java.util.List;
             this.libroService = LibroService;
         }
 
-        // Obtener todos los libros
+        // Obtener todos los libros//
         @GetMapping
         public List<Libro> getAllLibros() {
             return libroService.getAllLibros();

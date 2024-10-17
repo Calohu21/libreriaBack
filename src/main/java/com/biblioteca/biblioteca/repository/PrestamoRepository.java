@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface PrestamoRepository extends JpaRepository<Prestamo, Integer> {
 
-    // Encuentra todos los préstamos de un usuario/
+    // Encuentra todos los préstamos de un usuario//
     List<Prestamo> findByUsuarioId_prestamo(int id_usuario);
 
     // Encuentra préstamos activos de un usuario (PRESTADO o PENDIENTE)

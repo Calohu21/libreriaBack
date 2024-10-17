@@ -18,7 +18,7 @@ public class PrestamoController {
         this.prestamoService = prestamoService;
     }
 
-//    public Prestamo getPrestamo(int id_prestamo) {
+//    public Prestamo getPrestamo(int id_prestamo) {//
 //        return prestamoService.findById_Usuario(id_prestamo);
 //    }
 

@@ -34,7 +34,7 @@ public class LibroService {
         return libroRepository.findById(isbn).orElse(null);
     }
 
-    // Agregar un nuevo libro
+    // Agregar un nuevo libro//
     // Llama al método save() del repositorio, que guarda el libro en la base de datos. Si el libro ya existe,
     // será actualizado, pero en este caso se usa para crear un nuevo libro
     public Libro addLibro(Libro libro) {

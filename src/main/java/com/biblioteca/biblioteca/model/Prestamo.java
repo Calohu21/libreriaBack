@@ -20,7 +20,7 @@ public class Prestamo {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario", nullable = false)
-    private Usuario usuario; // Id del usuario (relacionado con la entidad de usuarios)/
+    private Usuario usuario; // Id del usuario (relacionado con la entidad de usuarios)//
 
     @Column(nullable=false)
     private LocalDate fechaPrestamo;

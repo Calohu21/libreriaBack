@@ -1,6 +1,6 @@
 package com.biblioteca.biblioteca.model;
 
-//
+///
 import jakarta.persistence.*;
 import lombok.Data;
 

@@ -7,7 +7,7 @@ import lombok.Data;
 import java.time.Year;
 
 @Entity // Indica que esta clase es una entidad JPA, es decir, será mapeada a una tabla en la base de datos
-@Table(name="Libros") // Especifica que esta entidad corresponde a la tabla libros/
+@Table(name="Libros") // Especifica que esta entidad corresponde a la tabla libros//
 @Data
 public class Libro {
 

@@ -17,7 +17,7 @@ public class PrestamoService {
         this.prestamoRepository = prestamoRepository;
     }
 
-    // Obtener todos los préstamos
+    // Obtener todos los préstamos//
     public List<Prestamo> getAllPrestamos() {
         return prestamoRepository.findAll();
     }

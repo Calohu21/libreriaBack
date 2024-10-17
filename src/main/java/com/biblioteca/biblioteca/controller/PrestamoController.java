@@ -1,3 +1,6 @@
+// Este archivo es el controlador que maneja las solicitudes HTTP relacionadas con los préstamos.
+// El controlador responde a las solicitudes del cliente (frontend o Postman) y las redirige al servicio correspondiente
+
 package com.biblioteca.biblioteca.controller;
 
 import com.biblioteca.biblioteca.model.Prestamo;

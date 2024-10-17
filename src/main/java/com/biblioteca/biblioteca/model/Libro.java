@@ -1,3 +1,11 @@
+
+// Resumen de cómo interactúan:
+//El cliente (frontend o Postman) envía una solicitud HTTP al controlador.
+//El controlador recibe la solicitud y la pasa al servicio, que contiene la lógica de negocio.
+//El servicio se comunica con el repositorio, que realiza las operaciones sobre la base de datos.
+//El repositorio accede a la base de datos y devuelve el resultado al servicio, que a su vez lo pasa al controlador,
+//y finalmente, el controlador envía la respuesta al cliente.
+
 package com.biblioteca.biblioteca.model;
 
 

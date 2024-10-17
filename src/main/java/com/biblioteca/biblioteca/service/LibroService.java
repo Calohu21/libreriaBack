@@ -1,3 +1,11 @@
+
+// Cada componente cumple una función específica en el sistema siguiendo el patrón MVC (Modelo-Vista-Controlador):
+//
+//Modelo (Prestamo.java): Representa los datos.
+//Repositorio (PrestamoRepository.java): Proporciona acceso a los datos.
+//Servicio (PrestamoService.java): Aplica la lógica de negocio.
+//Controlador (PrestamoController.java): Maneja las solicitudes HTTP y coordina el flujo de datos.
+
 package com.biblioteca.biblioteca.service;
 
 import com.biblioteca.biblioteca.model.Libro;

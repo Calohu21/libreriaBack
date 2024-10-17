@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Table(name="Prestamos")
 @Data
 public class Prestamo {
-//
+///
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_prestamo;

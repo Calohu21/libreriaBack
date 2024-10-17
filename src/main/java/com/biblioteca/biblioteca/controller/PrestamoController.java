@@ -5,11 +5,9 @@ package com.biblioteca.biblioteca.controller;
 
 import com.biblioteca.biblioteca.model.Prestamo;
 import com.biblioteca.biblioteca.service.PrestamoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/Prestamos")
@@ -21,9 +19,33 @@ public class PrestamoController {
         this.prestamoService = prestamoService;
     }
 
-//    public Prestamo getPrestamo(int id_prestamo) {//
-//        return prestamoService.findById_Usuario(id_prestamo);
-//    }
+    // Crear un endpoint para OBTENER todos los préstamos
+    @GetMapping
+    public List<Prestamo> getAllPrestamos() {
+        return prestamoService.getAllPrestamos();
+    }
 
+    // Crear un endpoint para CREAR un nuevo libro
+    @PostMapping
+    public Prestamo addPrestamo(@RequestBody Prestamo prestamo) {
+        return prestamoService.addPrestamo(prestamo);
+    }
+
+    // Crean un endpoint para ACTUALIZAR un préstamo
+    @PostMapping("/{id_prestamo}")
+    public Prestamo updatePrestamo(@RequestBody Integer id_prestamo, @RequestBody Prestamo prestamo) {
+        return prestamoService.updatePrestamo(id_prestamo, prestamo);
+    }
+
+    // Crear un endpoint para OBTENER préstamos POR ID
+    public List<Prestamo> findByUsuarioId(Integer id_usuario) {
+        return prestamoService.findById_Usuario(id_usuario);
+    }
+
+    // Crear un endpoint para OBTENER POR ID los préstamos de un usuario por su ESTADO
+    @GetMapping("/usuario/{id_usuario}/estado/{estado}")
+    public List<Prestamo> getPrestamosByIdUsuario_estado(@PathVariable int id_usuario, @PathVariable String estado) {
+        return prestamoService.findByIdUsuario_estado(id_usuario, estado);
+    }
 
 }

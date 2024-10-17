@@ -34,7 +34,7 @@ import java.util.List;
         // Crear un nuevo libro
 
         // La solicitud HTTP contendrá los detalles del libro en formato JSON, y @RequestBody se encargará de transformar esos
-        // datos JSON en un objeto Libro para que puedas trabajar con él directamente en Jav
+        // datos JSON en un objeto Libro para que puedas trabajar con él directamente en Java
         @PostMapping
         public Libro addLibro(@RequestBody Libro libro) {
             return libroService.addLibro(libro);

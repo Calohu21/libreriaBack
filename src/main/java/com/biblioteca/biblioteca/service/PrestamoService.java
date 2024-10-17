@@ -21,7 +21,7 @@ public class PrestamoService {
     }
 
     // Actualizar préstamo
-    public Prestamo updatePrestamo(Integer id_prestamo, Prestamo prestamo) {
+    public Prestamo updatePrestamo(int id_prestamo, Prestamo prestamo) {
         if (prestamoRepository.existsById(id_prestamo)) {
             prestamo.setId_prestamo(id_prestamo);
             return prestamoRepository.save(prestamo);
@@ -30,7 +30,7 @@ public class PrestamoService {
     }
 
     // Eliminar préstamo
-    public void deletePrestamo(Integer id_prestamo) {
+    public void deletePrestamo(int id_prestamo) {
          prestamoRepository.deleteById(id_prestamo);
     }
 

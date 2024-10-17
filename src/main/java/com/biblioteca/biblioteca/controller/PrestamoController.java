@@ -33,12 +33,13 @@ public class PrestamoController {
 
     // Crean un endpoint para ACTUALIZAR un préstamo
     @PostMapping("/{id_prestamo}")
-    public Prestamo updatePrestamo(@RequestBody Integer id_prestamo, @RequestBody Prestamo prestamo) {
+    public Prestamo updatePrestamo(@RequestBody int id_prestamo, @RequestBody Prestamo prestamo) {
         return prestamoService.updatePrestamo(id_prestamo, prestamo);
     }
 
     // Crear un endpoint para OBTENER préstamos POR ID
-    public List<Prestamo> findByUsuarioId(Integer id_usuario) {
+    @GetMapping("/{id_usuario}")
+    public List<Prestamo> findByUsuarioId( @PathVariable int id_usuario) {
         return prestamoService.findById_Usuario(id_usuario);
     }
 
@@ -46,6 +47,12 @@ public class PrestamoController {
     @GetMapping("/usuario/{id_usuario}/estado/{estado}")
     public List<Prestamo> getPrestamosByIdUsuario_estado(@PathVariable int id_usuario, @PathVariable String estado) {
         return prestamoService.findByIdUsuario_estado(id_usuario, estado);
+    }
+
+    // Crear un endpoint para ELIMINAR préstamos por id
+    @DeleteMapping
+    public void deletePrestamoById(int id_prestamo) {
+        prestamoService.deletePrestamo(id_prestamo);
     }
 
 }

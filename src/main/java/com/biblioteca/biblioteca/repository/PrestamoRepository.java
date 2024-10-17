@@ -1,7 +1,6 @@
 package com.biblioteca.biblioteca.repository;
 
 import com.biblioteca.biblioteca.model.Prestamo;
-import com.biblioteca.biblioteca.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +13,5 @@ public interface PrestamoRepository extends JpaRepository<Prestamo, Integer> {
     List<Prestamo> findByUsuarioId_prestamo(int id_usuario);
 
     // Encuentra préstamos activos de un usuario (PRESTADO o PENDIENTE)
-    List<Prestamo> findByUsuarioId_estado(int id, Prestamo.EstadoPrestamo estado);
+    List<Prestamo> findByUsuarioId_estado(int id_usuario, Prestamo.EstadoPrestamo estado);
 }

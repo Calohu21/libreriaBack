@@ -11,13 +11,18 @@ public class PrestamoService {
 
     private final PrestamoRepository prestamoRepository;
 
+    public PrestamoService(PrestamoRepository prestamoRepository) {
+        this.prestamoRepository = prestamoRepository;
+    }
+
+    // Obtener todos los préstamos//
+    public List<Prestamo> getAllPrestamos() {
+        return prestamoRepository.findAll();
+    }
+
     // Crear un nuevo préstamo
     public Prestamo addPrestamo(Prestamo prestamo) {
         return prestamoRepository.save(prestamo);
-    }
-
-    public PrestamoService(PrestamoRepository prestamoRepository) {
-        this.prestamoRepository = prestamoRepository;
     }
 
     // Actualizar préstamo
@@ -34,17 +39,12 @@ public class PrestamoService {
          prestamoRepository.deleteById(id_prestamo);
     }
 
-    // Obtener todos los préstamos//
-    public List<Prestamo> getAllPrestamos() {
-        return prestamoRepository.findAll();
-    }
-
     public List<Prestamo> findById_Usuario (int id_usuario) {
-        return prestamoRepository.findByUsuarioId_prestamo(id_usuario);
+        return prestamoRepository.findByUsuarioId(id_usuario);
     }
 
     public List<Prestamo> findByIdUsuario_estado (int id_usuario, String estado) {
-        return prestamoRepository.findByUsuarioId_estado(id_usuario, Prestamo.EstadoPrestamo.valueOf(estado));
+        return prestamoRepository.findByUsuarioIdAndEstado(id_usuario, Prestamo.EstadoPrestamo.valueOf(estado));
     }
 
 }

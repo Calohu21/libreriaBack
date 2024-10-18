@@ -2,6 +2,8 @@ package com.biblioteca.biblioteca.repository;
 
 import com.biblioteca.biblioteca.model.Prestamo;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,9 +11,14 @@ import java.util.List;
 @Repository
 public interface PrestamoRepository extends JpaRepository<Prestamo, Integer> {
 
-    // Encuentra todos los préstamos de un usuario//
-    List<Prestamo> findByUsuarioId_prestamo(int id_usuario);
+    // Se pueden definir consultas personalizadas usando la anotación @Query en el repositorio. En lugar de que Spring genere la
+    // consulta automáticamente, tú defines explícitamente cómo debería funcionar la consulta.
 
-    // Encuentra préstamos activos de un usuario (PRESTADO o PENDIENTE)
-    List<Prestamo> findByUsuarioId_estado(int id_usuario, Prestamo.EstadoPrestamo estado);
+    // Encuentra todos los préstamos de un usuario con JPQL
+    @Query("SELECT prestamo FROM Prestamo prestamo WHERE prestamo.usuario.id_usuario = :id_usuario")
+    List<Prestamo> findByUsuarioId(@Param("id_usuario")int id_usuario);
+
+    // Encuentra préstamos activos de un usuario por su estado con JPQL
+    @Query("SELECT prestamo FROM Prestamo prestamo WHERE prestamo.usuario.id_usuario = :id_usuario AND prestamo.estado = :estado")
+    List<Prestamo> findByUsuarioIdAndEstado(@Param("id_usuario") int id_usuario, @Param("estado") Prestamo.EstadoPrestamo estado);
 }

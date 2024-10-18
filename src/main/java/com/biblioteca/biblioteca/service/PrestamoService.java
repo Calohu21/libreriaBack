@@ -39,10 +39,12 @@ public class PrestamoService {
          prestamoRepository.deleteById(id_prestamo);
     }
 
+    // Obtener préstamo por Id
     public List<Prestamo> findById_Usuario (int id_usuario) {
         return prestamoRepository.findByUsuarioId(id_usuario);
     }
 
+    // Obtener todos préstamos por ID usuario y estado
     public List<Prestamo> findByIdUsuario_estado (int id_usuario, String estado) {
         return prestamoRepository.findByUsuarioIdAndEstado(id_usuario, Prestamo.EstadoPrestamo.valueOf(estado));
     }

@@ -23,7 +23,6 @@ import java.util.List;
         }
 
         // Obtener un libro por su ISBN
-
         //La anotación @PathVariable aplicada a String isbn indica que el valor del ISBN de la URL será asignado a la variable isbn del método.
         //Entonces, si la URL es /api/libros/9783161484100, Spring toma el valor 9783161484100 de la URL y lo pasa al método como el parámetro isbn
         @GetMapping("/{isbn}")
@@ -32,7 +31,6 @@ import java.util.List;
         }
 
         // Crear un nuevo libro
-
         // La solicitud HTTP contendrá los detalles del libro en formato JSON, y @RequestBody se encargará de transformar esos
         // datos JSON en un objeto Libro para que puedas trabajar con él directamente en Java
         @PostMapping

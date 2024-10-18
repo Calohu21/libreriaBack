@@ -20,6 +20,9 @@ public class Usuario {
     private String correo;
 
     @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
     private String gustos_generos;
 
     @Column

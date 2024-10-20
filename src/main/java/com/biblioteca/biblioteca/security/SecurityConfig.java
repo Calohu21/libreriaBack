@@ -24,7 +24,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable)  // Deshabilitamos CSRF para simplificar mientras desarrollamos (recuerda habilitarlo en producción)
+                .csrf(AbstractHttpConfigurer::disable)  //Deshabilitamos CSRF para simplificar mientras desarrollamos (recuerda habilitarlo en producción)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/usuarios/**").permitAll()  // Rutas públicas para registrar o gestionar usuarios
                         .requestMatchers("/api/prestamos/**").authenticated()  // Rutas que requieren autenticación

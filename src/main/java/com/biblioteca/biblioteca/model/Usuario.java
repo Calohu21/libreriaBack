@@ -30,4 +30,13 @@ public class Usuario {
 
     @Column
     private int prestamos_devueltos;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Rol rol;  // Agrega el campo de rol
+
+    public enum Rol {
+        USER,
+        ADMIN
+    }
 }

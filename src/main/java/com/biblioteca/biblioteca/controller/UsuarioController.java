@@ -45,4 +45,10 @@ public class UsuarioController {
     public void deleteUser(@PathVariable int id_usuario) {
         usuarioService.deleteUsuario(id_usuario);
     }
+
+    @GetMapping("/dashboard")
+    public String userDashboard() {
+        return "Bienvenido, Usuario";
+    }
+
 }
